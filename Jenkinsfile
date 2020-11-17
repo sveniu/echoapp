@@ -19,4 +19,7 @@ node {
          stash includes: '*.deb', name: 'package'
          archive includes: '*.deb'
      }
+
+     stage 'push'
+     sh 'package_cloud push sveniu/echoapp *.deb'
 }
