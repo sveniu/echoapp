@@ -21,5 +21,5 @@ node {
      }
 
      stage 'push'
-     sh 'package_cloud push sveniu/echoapp *.deb'
+     sh 'package_cloud push sveniu/echoapp/ubuntu/bionic *.deb'
 }
