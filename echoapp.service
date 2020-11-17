@@ -1,0 +1,11 @@
+[Unit]
+Description=echoapp
+After=network.target
+Type=simple
+
+[Service]
+Environment=APP_MODE=server
+ExecStart=/usr/bin/echoapp
+
+[Install]
+WantedBy=multi-user.target

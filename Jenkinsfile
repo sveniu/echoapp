@@ -15,7 +15,7 @@ node {
      docker.image('cdrx/fpm-ubuntu:18.04').inside {
          stage 'package'
          unstash 'binary'
-         sh 'fpm -s dir -t deb -n echoapp -v \$VERSION_STRING dist/linux-amd64=/opt/jwt-tokenissuer'
+         sh 'fpm -s dir -t deb -n echoapp -v \$VERSION_STRING --deb-systemd echoapp.service ./echoapp=/usr/bin/echoapp'
          stash includes: '*.deb', name: 'package'
          archive includes: '*.deb'
      }
